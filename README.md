@@ -1,3 +1,15 @@
+## TODO List
+
+- [ ] Add automated unit and integration tests for pipeline functions
+- [ ] Expand pipeline to support additional models (classification, clustering, PCA)
+- [ ] Implement peak detection algorithms for chromatograms/mass spectra
+- [ ] Enable batch processing of multiple files/samples
+- [ ] Add AWS/cloud integration examples (S3, Lambda, EC2)
+- [ ] Allow pipeline configuration via YAML/JSON
+- [ ] Enhance visualizations (interactive plots, overlays, export)
+- [ ] Add performance metrics and logging
+- [ ] Expand documentation with API reference and usage guides
+- [ ] Add more example Jupyter notebooks for advanced analysis
 # Informatics Computational Scientist Project
 
 The project will focus on the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), as well as integration with cloud data pipelines.
@@ -12,7 +24,7 @@ The project will focus on the development, experimentation, and validation of me
 
 ## Structure
 - `data/` — Example chromatographic, mass spectrometric, and time series chromatogram datasets
-- `notebooks/` — Exploratory data analysis and prototyping (Python, Jupyter)
+- `notebooks/` — Exploratory data analysis, prototyping, and interactive analysis (Python, Jupyter)
 - `models/` — Mechanistic and machine learning model code
 - `aws_pipeline/` — Simulated AWS Lambda, S3, and data pipeline integration
 - `visualization/` — Scripts and dashboards for metrics and results
@@ -22,7 +34,22 @@ The project will focus on the development, experimentation, and validation of me
 ## Getting Started
 1. Clone this repository and set up a Python virtual environment
 2. Install requirements: `pip install -r requirements.txt`
-3. Explore the `notebooks/` for EDA and prototyping
+3. Explore the `notebooks/` for EDA, prototyping, and interactive analysis
+## Interactive Jupyter Notebooks
+
+You can run interactive data analysis and visualization using JupyterLab:
+
+1. Install JupyterLab (if not already installed):
+	```bash
+	pip install jupyterlab ipywidgets
+	```
+2. Launch JupyterLab:
+	```bash
+	python -m jupyterlab
+	```
+3. Open `notebooks/interactive_chromatography_analysis.ipynb` and run the cells.
+
+If widgets do not display, ensure ipywidgets is installed and enabled. For troubleshooting, see the [ipywidgets documentation](https://ipywidgets.readthedocs.io/en/stable/user_install.html).
 4. Run models in `models/` and view results in `visualization/`
 5. See `aws_pipeline/` for cloud integration examples
 
