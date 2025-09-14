@@ -1,6 +1,6 @@
-# Waters Informatics Computational Scientist Project
+# Informatics Computational Scientist Project
 
-This project is inspired by the Waters Informatics Department job description (Req. #22989) and is designed to showcase skills and workflows relevant to the role of a Computational Scientist at the interface of research and development. The project will focus on the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), as well as integration with cloud data pipelines.
+The project will focus on the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), as well as integration with cloud data pipelines.
 
 ## Project Goals
 - Develop and validate mechanistic and machine learning models for chromatography and mass spectrometry data
@@ -59,4 +59,3 @@ flowchart TD
 	K --> C
 ```
 
-This project is for demonstration and portfolio purposes only and is not affiliated with Waters Corporation.
