@@ -1,6 +1,4 @@
-"""
-Sample data pipeline for chromatographic/mass spectrometric data
-"""
+
 
 import os
 import pandas as pd
@@ -10,6 +8,33 @@ import matplotlib.pyplot as plt
 
 
 class DataPipeline:
+
+    def process_timeseries_chromatogram(self, filename, plot=False):
+        """Process and plot time series chromatogram data (multiple samples)."""
+        df = self.load_data(filename)
+        # Assume first column is retention_time, others are samples
+        retention_time = df.iloc[:, 0]
+        sample_cols = df.columns[1:]
+        if plot:
+            import matplotlib.pyplot as plt
+            plt.figure(figsize=(8, 5))
+            for col in sample_cols:
+                plt.plot(retention_time, df[col], label=col)
+            plt.xlabel('Retention Time')
+            plt.ylabel('Intensity')
+            plt.title('Time Series Chromatograms')
+            plt.legend()
+            plt.tight_layout()
+            plt.show()
+        # Return summary statistics for each sample
+        summary = df[sample_cols].describe().to_dict()
+        return {
+            'filename': filename,
+            'shape': df.shape,
+            'columns': df.columns.tolist(),
+            'head': df.head().to_dict(),
+            'summary_statistics': summary
+        }
     def __init__(self, data_dir):
         self.data_dir = data_dir
 
@@ -90,6 +115,12 @@ if __name__ == "__main__":
     pipeline = DataPipeline(data_dir)
     files = pipeline.list_data_files()
     print(f"Found data files: {files}")
-    if files:
+    # If time series chromatogram file exists, process and plot it
+    ts_file = 'sample_chromatogram_timeseries.csv'
+    if ts_file in files:
+        info = pipeline.process_timeseries_chromatogram(ts_file, plot=True)
+        print(f"Time series chromatogram info: {info}")
+    # Otherwise, process the first file as before
+    elif files:
         info = pipeline.process(files[0], plot=True)
         print(f"Sample file info: {info}")

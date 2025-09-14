@@ -11,7 +11,7 @@ The project will focus on the development, experimentation, and validation of me
 - Maintain reproducible, well-documented, and testable code
 
 ## Structure
-- `data/` — Example chromatographic and mass spectrometric datasets
+- `data/` — Example chromatographic, mass spectrometric, and time series chromatogram datasets
 - `notebooks/` — Exploratory data analysis and prototyping (Python, Jupyter)
 - `models/` — Mechanistic and machine learning model code
 - `aws_pipeline/` — Simulated AWS Lambda, S3, and data pipeline integration
@@ -37,8 +37,10 @@ The main pipeline (see `aws_pipeline/sample_data_pipeline.py`) demonstrates a ty
 1. **Data Loading**: Reads chromatographic/mass spectrometric data from CSV files in the `data/` directory using pandas.
 2. **Data Normalization**: Scales numeric columns to a 0-1 range for fair comparison and model input.
 3. **Summary Statistics**: Computes descriptive statistics (mean, std, min, max, quartiles) for all numeric columns.
-4. **Linear Regression Modeling**: Fits a linear regression model to predict `intensity` from `retention_time` using scikit-learn, and reports coefficients and R² score.
-5. **Visualization**: Plots the data points and regression line using matplotlib for quick visual assessment of model fit.
+
+4. **Linear Regression Modeling**: Fits a linear regression model to predict `intensity` from `retention_time` using scikit-learn, and reports coefficients and R² score (for single-sample data).
+5. **Time Series Chromatogram Support**: Loads and processes multi-sample chromatogram data (retention time vs. intensity for multiple samples), computes summary statistics for each sample, and plots all sample traces for comparison.
+6. **Visualization**: Plots the data points and regression line (for single-sample) or all sample traces (for time series) using matplotlib for quick visual assessment of model fit and sample differences.
 
 Each step is modular and can be extended for more advanced feature engineering, modeling, or integration with cloud services.
 
