@@ -47,13 +47,13 @@ Each step is modular and can be extended for more advanced feature engineering, 
 
 ```mermaid
 flowchart TD
-	A[Instrument Data (Chromatography/Mass Spectrometry)] --> B[Data Pipeline & Processing]
+	A[Instrument Data - Chromatography/Mass Spectrometry] --> B[Data Pipeline & Processing]
 	B --> C[Feature Engineering & Data Exploration]
-	C --> D[Model Development (Mechanistic & ML)]
+	C --> D[Model Development - Mechanistic & ML]
 	D --> E[Model Evaluation & Metrics]
 	E --> F[Visualization & Reporting]
 	D --> G[Unit Testing]
-	E --> H[AWS Integration (Lambda, S3, EC2, Redshift)]
+	E --> H[AWS Integration - Lambda, S3, EC2, Redshift]
 	H --> I[Cloud Deployment]
 	F --> J[Stakeholder Communication]
 	J --> K[Feedback & Iteration]
