@@ -10,6 +10,19 @@ Here is a revised version, with key changes highlighted and explained.
 
 A comprehensive portfolio demonstrating the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), with integration into cloud data pipelines.
 
+## 🧬 New: Mass Spectrometry (MS) Workflow
+
+The unified notebook now includes a full demonstration of mass spectrometry (MS) data analysis and modeling:
+- **Synthetic mzML-like MS data generation** (m/z, intensity, spectra)
+- **Feature extraction** (peak picking, top N peaks, summary statistics)
+- **Machine learning** (classification of spectra, sample type prediction)
+- **Advanced visualizations:**
+  - Single spectrum plots
+  - PCA of spectra (sample clustering)
+  - Heatmap of intensity across scans and m/z
+
+This addition directly addresses Waters Informatics requirements for MS data analysis, modeling, and visualization, and demonstrates readiness for the computational scientist role.
+
 **Directly Addressing Waters Informatics Requirements:** This project showcases competencies in **Global Research** (model development & experimentation) and **Informatics** (AWS cloud integration & pipeline construction) as outlined in Req. # 22989.
 
 ## 🚀 Core Competencies Demonstrated
@@ -40,10 +53,11 @@ A comprehensive portfolio demonstrating the development, experimentation, and va
 ├── data/                       # Example chromatographic, mass spectrometric, and time series datasets
 ├── notebooks/                  # Jupyter notebooks for exploration, analysis, and stakeholder presentation
 │   ├── fill_gaps_ml_dashboard_stats_doc.ipynb  # Comprehensive demo: ML, statistical analysis, and interactive dashboard
-│   └── interactive_chromatography_analysis.ipynb
+│   └── (superseded: see chromatography_informatics_workflow.ipynb)
 ├── models/                     # Core model code for mechanistic and machine learning approaches
 │   └── mechanistic_modeling/
 │       └── chromatography_mechanistic_simulation.ipynb  # Step-by-step guide to mechanistic model development
+│   └── chromatography_informatics_workflow.ipynb  # Unified workflow: mechanistic modeling, ML, dashboard, statistics, and documentation (start here)
 ├── aws_pipeline/              # Simulated AWS data pipeline components (S3, Lambda)
 ├── visualization/             # Scripts for generating meaningful metrics and visualizations
 ├── tests/                     # Unit tests to ensure code reliability
@@ -51,6 +65,32 @@ A comprehensive portfolio demonstrating the development, experimentation, and va
 ```
 
 ## 🧪 Getting Started
+
+## 📊 Visualizing Notebook Results
+
+To view all results, plots, and interactive outputs:
+
+- Open the notebook (`notebooks/chromatography_informatics_workflow.ipynb`) in **JupyterLab**, **Jupyter Notebook**, or **VS Code**.
+- Run cells individually or use "Run All" to execute the entire workflow.
+- All figures, tables, and outputs will be displayed inline, allowing you to interact with and review the results directly in the notebook interface.
+
+This is the recommended way to explore the workflow, visualizations, and analysis results.
+
+## 🧾 Testing the Main Notebook
+
+To ensure the main workflow notebook runs without errors and produces the expected results, you can use automated notebook testing tools such as `nbval` (a pytest plugin for Jupyter notebooks):
+
+1. **Install nbval:**
+  ```bash
+  pip install nbval
+  ```
+2. **Run the notebook tests:**
+  ```bash
+  pytest --nbval notebooks/chromatography_informatics_workflow.ipynb
+  ```
+  This will execute all cells in the notebook and report any errors or output mismatches.
+
+Alternatively, you can open the notebook in JupyterLab or VS Code and use "Run All" to manually verify execution and outputs.
 
 ### 1. Prerequisites
 *   Python 3.8+
@@ -76,6 +116,11 @@ jupyter lab
 ```
 *   **For Mechanistic Modeling:** Open `models/mechanistic_modeling/chromatography_mechanistic_simulation.ipynb`
 *   **For ML, Dashboard & Stats:** Open `notebooks/fill_gaps_ml_dashboard_stats_doc.ipynb` (Launches an interactive dashboard in your browser).
+*   **Unified Workflow:** Open `notebooks/chromatography_informatics_workflow.ipynb` (Single notebook: mechanistic modeling, ML, dashboard, statistics, and documentation mapping).
+
+  - Includes a dedicated section for Mass Spectrometry (MS) data analysis and modeling, with synthetic mzML-like data, feature extraction, ML, PCA, and heatmap visualizations.
+
+> **Note:** The unified notebook `notebooks/chromatography_informatics_workflow.ipynb` supersedes the previous individual demonstration notebooks. All workflows and documentation are now consolidated for a seamless demonstration experience.
 
 ## ⚙️ Workflow Overview
 
