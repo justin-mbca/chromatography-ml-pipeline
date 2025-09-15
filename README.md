@@ -10,7 +10,8 @@ Here is a revised version, with key changes highlighted and explained.
 
 A comprehensive portfolio demonstrating the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), with integration into cloud data pipelines.
 
-## 🧬 New: Mass Spectrometry (MS) Workflow
+
+## 🧬 New: Mass Spectrometry (MS) Workflow & Advanced Chromatography Analysis
 
 The unified notebook now includes a full demonstration of mass spectrometry (MS) data analysis and modeling:
 - **Synthetic mzML-like MS data generation** (m/z, intensity, spectra)
@@ -21,7 +22,14 @@ The unified notebook now includes a full demonstration of mass spectrometry (MS)
   - PCA of spectra (sample clustering)
   - Heatmap of intensity across scans and m/z
 
-This addition directly addresses Waters Informatics requirements for MS data analysis, modeling, and visualization, and demonstrates readiness for the computational scientist role.
+
+**Chromatography Workflow Enhancements:**
+- **Batch Mechanistic Model Fitting:** Automatically fits the mechanistic model to all detected chromatographic peaks, summarizing fit parameters (dispersion D, velocity v, scale) for each peak.
+- **Automated Outlier & QC Flagging:** Identifies peaks with unusual or out-of-spec mechanistic parameters, supporting robust quality control and troubleshooting.
+- **ML Integration:** Fitted mechanistic parameters (D, v, scale) can be used as features in downstream machine learning workflows for classification, regression, or instrument health monitoring.
+- **Interpretation Guidance:** The notebook provides practical guidance on selecting appropriate peaks for fitting and interpreting results for scientific and QC purposes.
+
+This addition directly addresses Waters Informatics requirements for both MS and advanced chromatography data analysis, modeling, and visualization, and demonstrates readiness for the computational scientist role.
 
 **Directly Addressing Waters Informatics Requirements:** This project showcases competencies in **Global Research** (model development & experimentation) and **Informatics** (AWS cloud integration & pipeline construction) as outlined in Req. # 22989.
 
@@ -66,13 +74,19 @@ This addition directly addresses Waters Informatics requirements for MS data ana
 
 ## 🧪 Getting Started
 
-## 📊 Visualizing Notebook Results
+
+## 📊 Visualizing Notebook Results & Ensuring Plot Visibility
 
 To view all results, plots, and interactive outputs:
 
 - Open the notebook (`notebooks/chromatography_informatics_workflow.ipynb`) in **JupyterLab**, **Jupyter Notebook**, or **VS Code**.
 - Run cells individually or use "Run All" to execute the entire workflow.
 - All figures, tables, and outputs will be displayed inline, allowing you to interact with and review the results directly in the notebook interface.
+
+
+**To ensure plots and results are visible on GitHub:**
+- Run all cells in the notebook and save it before pushing to GitHub. GitHub will display all plots as static images in the rendered notebook.
+- For interactive or high-resolution figures, you can also save plots as PNG files from within the notebook if needed.
 
 This is the recommended way to explore the workflow, visualizations, and analysis results.
 
@@ -119,6 +133,7 @@ jupyter lab
 *   **Unified Workflow:** Open `notebooks/chromatography_informatics_workflow.ipynb` (Single notebook: mechanistic modeling, ML, dashboard, statistics, and documentation mapping).
 
   - Includes a dedicated section for Mass Spectrometry (MS) data analysis and modeling, with synthetic mzML-like data, feature extraction, ML, PCA, and heatmap visualizations.
+  - Chromatography section now features batch mechanistic model fitting, automated outlier detection, and QC flagging, with guidance for ML integration and result interpretation.
 
 > **Note:** The unified notebook `notebooks/chromatography_informatics_workflow.ipynb` supersedes the previous individual demonstration notebooks. All workflows and documentation are now consolidated for a seamless demonstration experience.
 
