@@ -10,7 +10,39 @@
 - [ ] Add performance metrics and logging
 - [ ] Expand documentation with API reference and usage guides
 - [ ] Add more example Jupyter notebooks for advanced analysis
+
 # Informatics Computational Scientist Project
+
+## Mechanistic Modeling Module (Chromatography)
+
+This module demonstrates mechanistic modeling of chromatographic behavior using ordinary differential equations (ODEs) and the axial dispersion model. It includes:
+
+- **Single-Peak Simulation:** Simulate chromatographic peaks using ODEs and the axial dispersion model.
+- **Parameter Fitting:** Fit model parameters (e.g., rate constant, dispersion) to experimental data using `scipy.optimize.curve_fit`.
+- **Multi-Peak Simulation:** Simulate and fit multiple analytes/peaks by summing model functions.
+- **Model Comparison:** Compare ODE and dispersion models to experimental data for quantitative assessment.
+- **Cycle Segmentation:** Automatically segment experimental data into cycles and fit models to each cycle.
+- **Documentation:** All steps are documented in Jupyter notebooks with markdown explanations and visualizations.
+
+**Relevance to Waters Informatics:**
+- Demonstrates quantitative analysis, method optimization, and instrument calibration using mechanistic models.
+- Supports mixture analysis and impurity profiling via multi-peak fitting.
+- Provides a foundation for automated, cloud-ready analytical pipelines and dashboards.
+
+
+See `models/mechanistic_modeling/chromatography_mechanistic_simulation.ipynb` for a complete, step-by-step demonstration of mechanistic modeling.
+
+## Machine Learning, Dashboard, and Statistics Notebook
+
+See `notebooks/fill_gaps_ml_dashboard_stats_doc.ipynb` for a comprehensive demonstration of:
+
+- **Synthetic Data Generation:** Simulate chromatographic data for two classes, with feature extraction (peak area, height, retention time).
+- **Machine Learning Pipeline:** Train and evaluate a RandomForestClassifier to distinguish chromatogram classes, with feature space visualization.
+- **Interactive Dashboard:** Explore chromatograms interactively using a Plotly Dash dashboard (launches in your browser).
+- **Statistical Analysis:** Perform t-tests and ANOVA to compare features between classes.
+- **Documentation Mapping:** Explicitly map code sections to informatics/data science skills and resume items for professional alignment.
+
+This notebook is self-contained and demonstrates best practices in reproducible research, data science, and scientific informatics workflows.
 
 The project will focus on the development, experimentation, and validation of mechanistic and machine learning models for analytical instrumentation data (chromatography and mass spectrometry), as well as integration with cloud data pipelines.
 
@@ -47,7 +79,7 @@ You can run interactive data analysis and visualization using JupyterLab:
 	```bash
 	python -m jupyterlab
 	```
-3. Open `notebooks/interactive_chromatography_analysis.ipynb` and run the cells.
+3. Open `notebooks/interactive_chromatography_analysis.ipynb` or `notebooks/fill_gaps_ml_dashboard_stats_doc.ipynb` and run the cells for interactive analysis, ML, dashboard, and statistics.
 
 If widgets do not display, ensure ipywidgets is installed and enabled. For troubleshooting, see the [ipywidgets documentation](https://ipywidgets.readthedocs.io/en/stable/user_install.html).
 4. Run models in `models/` and view results in `visualization/`
@@ -59,7 +91,7 @@ If widgets do not display, ensure ipywidgets is installed and enabled. For troub
 
 ## Pipeline Steps Explained
 
-The main pipeline (see `aws_pipeline/sample_data_pipeline.py`) demonstrates a typical workflow for scientific data analysis and model development:
+The main pipeline (see `aws_pipeline/sample_data_pipeline.py`) demonstrates a typical workflow for scientific data analysis and model development. For a full ML pipeline, dashboard, and statistics, see `notebooks/fill_gaps_ml_dashboard_stats_doc.ipynb`:
 
 1. **Data Loading**: Reads chromatographic/mass spectrometric data from CSV files in the `data/` directory using pandas.
 2. **Data Normalization**: Scales numeric columns to a 0-1 range for fair comparison and model input.
